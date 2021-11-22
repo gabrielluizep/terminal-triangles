@@ -17,7 +17,6 @@ int main() {
     } while (triangleSize < 1);
 
     /* Set how much triangles will be drawn */
-
     do {
         printf("Quantos triangulos deseja desenhar na tela?\n");
         scanf("%d", &repetitions);
@@ -27,7 +26,7 @@ int main() {
     printf(
         "Com qual caractere você gostaria que fosse desenhado o "
         "triangulo?\n");
-
+    /* Using space before %c to avoid bufferized '\n' from previous scanf */
     scanf(" %c", &choosedChar);
 
     /* This script is far from ideal, his complexity is O(n^3) */
