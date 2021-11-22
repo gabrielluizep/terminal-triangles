@@ -24,14 +24,11 @@ int main() {
     } while (repetitions < 1);
 
     /* Set wich character will be used to draw on the terminal */
-
     printf(
         "Com qual caractere você gostaria que fosse desenhado o "
         "triangulo?\n");
 
     scanf(" %c", &choosedChar);
-
-    printf("%c", -254);
 
     /* This script is far from ideal, his complexity is O(n^3) */
     while (repetitions > trianglesDrawn) {
