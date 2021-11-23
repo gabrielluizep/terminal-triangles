@@ -4,7 +4,9 @@ int main() {
     /* User inputs */
     int triangleSize;
     int repetitions;
-    char choosedChar;
+
+    char charOdd = '*';
+    char charEven = 'l';
 
     /* Loop helper variables */
     /* Needed since while must be used */
@@ -24,20 +26,24 @@ int main() {
 
     /* Set wich character will be used to draw on the terminal */
     printf(
-        "Com qual caractere você gostaria que fosse desenhado o "
-        "triangulo?\n");
+        "Com qual caractere você gostaria que fosse desenhado os triangulos "
+        "pares?\n");
     /* Using space before %c to avoid bufferized '\n' from previous scanf */
-    scanf(" %c", &choosedChar);
+    scanf(" %c", &charEven);
 
     /* This script is far from ideal, his complexity is O(n^3) */
     while (repetitions > trianglesDrawn) {
         int lineSize = 0;
 
+        char usedChar;
+
+        (trianglesDrawn % 2) ? (usedChar = charEven) : (usedChar = charOdd);
+
         while (triangleSize >= lineSize) {
             int charDraw = 0;
 
             while (lineSize > charDraw) {
-                printf("%c", choosedChar);
+                printf("%c", usedChar);
 
                 charDraw++;
             }
